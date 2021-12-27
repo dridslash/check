@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 18:01:27 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/24 10:44:35 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/27 16:20:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,6 @@ void	ft_ss(node **head_ref_a,node **head_ref_b);
 void	ft_reverse_rotate_b(node **head_ref_b);
 void	ft_radix(node **head_ref_a,node **head_ref_b);
 void	ft_LiLHak_sort(char **arr,int size);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_is_empty(char *arg);
 #endif

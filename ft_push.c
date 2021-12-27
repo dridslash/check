@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:15:49 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/21 11:16:04 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/27 18:52:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void push(node **head_ref,int x)
 {
-	node *n = (node *)malloc(sizeof(node));
+	node *n = (node *)malloc(sizeof(node)); 
 	n->data = x;
 	if((*head_ref) == NULL)
 	{

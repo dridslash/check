@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:14:56 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/21 11:15:13 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/27 22:27:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void printlist(node *head)
 		printf("%d\n",tmp->data);
 		tmp = tmp->next;
 	}
+	printf("\n");
 }

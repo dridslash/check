@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:32:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/24 15:22:50 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/27 22:27:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,11 @@ void ft_index(node *head_ref,int argc,char **argv)
 			}
 			head_ref = head_ref->next;
 		}
-		//head_ref = head_ref->next;
 }
 
 int main(int argc,char **argv)
 {
-	node *a;
+	node *a = NULL;
 	node *b = NULL;
 	int i = 1;
 	if(ft_check_input(argv) == 1)
@@ -74,19 +73,20 @@ int main(int argc,char **argv)
 	// }
 	// else
 	// {
-	// printf("before sort \n");
-	// printf("linked list : a\n");
-	// printlist(a);
-	// printf("linked list : b\n");
-	// printlist(b);
-	//ft_radix(&a,&b);
-	// printf("after sort \n");
-	// 	printf("not sorted\n");	
-	// }
+	printf("before sort \n");
 	printf("linked list : a\n");
 	printlist(a);
 	// printf("linked list : b\n");
 	// printlist(b);
+	ft_radix(&a,&b);
+	// //--------------------//
+	printf("after sort \n");
+	printf("linked list : a\n");
+	printlist(a);
+	// printf("\n---------------------------------\n");	
+	printf("\n---------------------------------\n");
+	printf("linked list : b\n");
+	printlist(b);
 	
 	//ft_push_b(&a,&b);
 	

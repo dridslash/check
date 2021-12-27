@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:04:06 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/24 14:04:10 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/27 22:29:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,42 +28,48 @@ static int find_big_digit(node **head_ref_a)
 }
 static unsigned int count_bits(int m)
 {
-	unsigned int count = 0;
-	while (m)
-	{
-		count++;
-		m >>= 1;
-	}
-	return (count);
+   unsigned int count = 0;
+   while (m)
+   {
+        count++;
+        m >>= 1;
+    }
+	return(count);
 }
 static void send_to_a(node **head_ref_a,node **head_ref_b)
 {
 	int index = 0;
 	node *tmp = (*head_ref_b);
-		while(tmp != NULL)
+	int size = list_size(tmp);
+		while(index < size)
 		{
 			ft_push_a(head_ref_a,head_ref_b);
-			tmp = tmp->next;
+			index++;
 		}
 }
 void ft_radix(node **head_ref_a,node **head_ref_b)
 {
-	     int max = find_big_digit(head_ref_a);
-		 int max_bits = count_bits(max);
+	     unsigned int max = find_big_digit(head_ref_a);
+		 unsigned int max_bits = count_bits(max);
 		 node *tmp = (*head_ref_a);
-		 int index = 0;
+		 int size = list_size(tmp);
+		unsigned int index = 0;
 		int i =0;
 		while (i < max_bits)
 		{
-			//index = 0;
-			while(index < list_size((tmp)))
+			index = 0;
+				//printf("not sorted\n");
+			while(index < size)
 			{
-				if(((((*head_ref_a))->data >>i)&1) == 1)
+				tmp = (*head_ref_a);
+				if(((tmp->data>>i)&1) == 1)
 				{
 					ft_rotate_a(head_ref_a);
 				}
-				else
+				else if(ft_check_if_sorted((*head_ref_a)) <= 0)
+				{
 					ft_push_b(head_ref_a,head_ref_b);
+				}
 				index++;
 			}
 			send_to_a(head_ref_a,head_ref_b);
