@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 10:50:45 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/18 19:49:12 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2021/12/30 17:25:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*void del(void *content)
-{
-	content=ft_strdup("");
-}*/
+
 void	ft_lstclear(node **lst, void (*del)(void*))
 {
 	node	*l;

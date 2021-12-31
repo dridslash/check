@@ -20,7 +20,7 @@ ARV = ar -rcs
 
 all : $(LIB)
 $(LIB) : $(OBJS)
-	#cc ${CFLAGS} test.c ${LIB} -o test
+	cc ${CFLAGS} test.c ${LIB} -o push_swap
 
 clean :
 	${REM} ${OBJS} pipex
