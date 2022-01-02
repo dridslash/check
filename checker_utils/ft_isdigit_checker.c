@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_isdigit_checker.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/11/01 17:42:17 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 18:22:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+int	ft_isdigit(int arg)
 {
-	if(list_size((*head_ref_a)) > 1)
-	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
-	}
+		if (arg >= 48 && arg <= 57)
+		{
+		return (1);
+		}
+	
+	return (0);
 }

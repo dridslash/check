@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/20 11:11:44 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 17:47:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+int ft_check_dup(char **argv)
 {
-	if(list_size((*head_ref_a)) > 1)
+	int i=1;
+	int j=0;
+	while (argv[i])
 	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
+		j = i + 1;
+		while(argv[j])
+		{
+			if(ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			return (1);
+			j++;
+		}
+		j = 0;
+		i++;
 	}
+	return (0);
+	
 }

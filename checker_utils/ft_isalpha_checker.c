@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_isalpha_checker.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/11/01 16:14:18 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 18:22:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+int	ft_isalpha(char *chr)
 {
-	if(list_size((*head_ref_a)) > 1)
+	int i=0;
+	while (chr[i])
 	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
+	if ((chr[i] >= 65 && chr[i] <= 90) || (chr[i] >= 97 && chr[i] <= 122))
+	{
+		return (1);
 	}
+	i++;
+	}
+	return (0);
 }

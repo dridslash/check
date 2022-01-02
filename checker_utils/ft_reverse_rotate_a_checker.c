@@ -6,19 +6,22 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 17:59:40 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/01 12:56:30 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/02 17:43:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static node *get_sec_last_a(node **head_ref)
 {
 	   node *tmp=(*head_ref);
 	   node *last = ft_lstlast((*head_ref));
+	   node *sec_last = NULL;
 	   while (tmp->next != last)
+	   {
 	   	tmp = tmp->next;
-		node *sec_last = tmp;
+	   }
+		sec_last = tmp;
 	return (sec_last);
 }
 

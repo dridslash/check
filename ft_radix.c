@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:04:06 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/01 13:44:19 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/02 17:11:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int count_bits(int m)
 
 void ft_radix(node **head_ref_a,node **head_ref_b)
 {
+	printf("im radix");
 	      int max = find_big_digit(head_ref_a);
 		  int max_bits = count_bits(max);
 		 node *tmp = (*head_ref_a);

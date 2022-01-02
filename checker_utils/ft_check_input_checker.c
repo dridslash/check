@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/19 18:32:01 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 17:48:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+int ft_check_input(char **argv)
 {
-	if(list_size((*head_ref_a)) > 1)
+	int i=1;
+	while(argv[i])
 	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
+			if(ft_isalpha(argv[i]) || ((ft_isdigit_imp(argv[i])) == 0) || (ft_is_empty(argv[i]) == 0))
+			{
+				return (1);
+			}	
+			else
+			{
+				ft_atoi(argv[i]);
+			}
+		i++;
 	}
+	return (0);
 }

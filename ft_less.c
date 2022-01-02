@@ -72,7 +72,7 @@ void ft_less(node **head_ref_a,node **head_ref_b)
                         macro_handl(head_ref_a);
                         send_to_a(head_ref_a,head_ref_b);
                 }
-                else if(list_size((*head_ref_a)) >= 5)
+                else if(list_size((*head_ref_a)) >= 5 || list_size((*head_ref_a)) < 5)
                 {
                         bigech_handl_pro(head_ref_a,head_ref_b);
                         send_to_a(head_ref_a,head_ref_b);

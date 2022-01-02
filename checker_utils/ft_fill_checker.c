@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/31 14:05:10 by marvin            #+#    #+#             */
-/*   Updated: 2021/12/31 14:05:10 by marvin           ###   ########.fr       */
+/*   Created: 2022/01/01 13:04:32 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/01 13:04:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int     ft_strcmp(const char  *s1,const char    *s2)
+void ft_fill(char **argv,node **head_ref_a)
 {
-	while(*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+    int i =1;
+    while(argv[i])
 	{
-		   s1++;
-		      s2++;
+		push_back(head_ref_a,ft_atoi(argv[i]));
+		i++;
 	}
-	return *s1 - *s2;
-
 }

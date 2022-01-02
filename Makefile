@@ -43,28 +43,38 @@ ft_small_handl.c \
 ft_bigech_handl.c \
 ft_sort_separ.c \
 
-CHECKER_SRCS = bonus_checker.c \
-ft_checker_main.c \
-ft_push_a_checker.c \
-ft_push_b_checker.c \
-ft_reverse_rotate_a_checker.c \
-ft_reverse_rotate_b_checker.c \
-ft_rotate_a_checker.c \
-ft_rotate_b_checker.c \
-ft_rr_checker.c \
-ft_rrr_checker.c \
-ft_ss_checker.c \
-ft_strcmp.c \
-ft_strstr.c \
-ft_check_dup.c \
-ft_swap_a_checker.c \
-ft_swap_b_checker.c \
-get_next_line.c \
-ft_strjoin.c \
-ft_strdup.c \
-ft_substr.c \
-ft_strchr.c \
-ft_strlen.c \
+CHECKER_SRCS = ./checker_utils/bonus_checker.c \
+./checker_utils/ft_checker_main.c \
+./checker_utils/ft_push_a_checker.c \
+./checker_utils/ft_push_b_checker.c \
+./checker_utils/ft_reverse_rotate_a_checker.c \
+./checker_utils/ft_reverse_rotate_b_checker.c \
+./checker_utils/ft_rotate_a_checker.c \
+./checker_utils/ft_rotate_b_checker.c \
+./checker_utils/ft_rr_checker.c \
+./checker_utils/ft_rrr_checker.c \
+./checker_utils/ft_ss_checker.c \
+./checker_utils/ft_strcmp.c \
+./checker_utils/ft_strstr.c \
+./checker_utils/ft_swap_a_checker.c \
+./checker_utils/ft_swap_b_checker.c \
+./checker_utils/get_next_line.c \
+./checker_utils/get_next_line_utils.c \
+./checker_utils/ft_index_checker.c \
+./checker_utils/ft_push_back_checker.c \
+./checker_utils/ft_fill_checker.c \
+./checker_utils/ft_LiLHak_sort_checker.c \
+./checker_utils/ft_list_size_checker.c \
+./checker_utils/ft_check_dup_checker.c \
+./checker_utils/ft_check_if_sorted_checker.c \
+./checker_utils/ft_check_input_checker.c \
+./checker_utils/ft_push_checker.c \
+./checker_utils/ft_atoi_checker.c \
+./checker_utils/ft_is_empty_checker.c \
+./checker_utils/ft_isalpha_checker.c \
+./checker_utils/ft_isdigit_checker.c \
+./checker_utils/ft_isdigit_imp_checker.c \
+./checker_utils/ft_lstlast_checker.c
 
 OBJS = ${SRCS:.c=.o}
 CHECKER_OBJS= ${CHECKER_SRCS:.c=.o}
@@ -79,23 +89,32 @@ ARV = ar -rcs
 
 .c.o :
 	${CC} ${CFLAGS} $< -o $@
-	${ARV} $(LIB) $@
+	
 
 all : $(LIB)
 $(LIB) : $(OBJS)
-	cc ${CFLAGS} push_swap.c ${LIB} -o push_swap
+	${ARV} $(LIB) $(OBJS)
+		cc ${CFLAGS} push_swap.c ${LIB} -o push_swap
 
 checker : $(CHECKER_LIB)
 $(CHECKER_LIB) : $(CHECKER_OBJS)
-	${CC} ${CFLAGS} ${CHECKER_SRCS} -o ${CHECKER_OBJS}
-	cc ${CFLAGS} ft_checker_main.c ${CHECKER_LIB} checker
+	$(ARV) ${CHECKER_LIB} $(CHECKER_OBJS)
+		cc ${CFLAGS} ./checker_utils/ft_checker_main.c ${CHECKER_LIB} -o checker
 
 clean :
-	${REM} ${OBJS} push_swap
+	${REM} ${OBJS} 
+
+checker_clean :
+	${REM} ${CHECKER_OBJS} 
+
+checker_fclean :checker_clean
+	${REM} ${CHECKER_LIB} checker
+
+checker_re : checker_fclean checker
 
 fclean : clean
-	${REM} ${LIB}
+	${REM} ${LIB} push_swap
 
 re : fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re checker checker_fclean checker_clean checker_re

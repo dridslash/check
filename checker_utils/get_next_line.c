@@ -6,18 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:46:48 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/30 18:21:21 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/02 17:49:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include "../push_swap.h"
 #define BUFFER_SIZE 1
 static void	ft_free(char **s1, char **s2)
 {
@@ -69,10 +62,14 @@ char	*get_next_line(int fd)
 	char		*sline;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
 		return (NULL);
+	}
 		buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
+	{
 		return (NULL);
+	}
 	if (read(fd, buffer, 0) == -1)
 	{
 		free(buffer);
@@ -80,7 +77,9 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	if (!saver)
+	{
 		saver = ft_strdup("");
+	}
 	ft_next(&buffer, &sline, &saver, fd);
 	return (sline);
 }

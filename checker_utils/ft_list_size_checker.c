@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_list_size_checker.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 11:15:27 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 18:09:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+int list_size(node *head)
 {
-	if(list_size((*head_ref_a)) > 1)
+	int i;
+	
+	i = 0;
+	while (head != NULL)
 	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
+		i++;
+		head = head ->next;
 	}
+	return (i);
 }

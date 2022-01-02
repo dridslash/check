@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_a_checker.c                                :+:      :+:    :+:   */
+/*   ft_push_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:19:37 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/02 17:41:17 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 11:15:49 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/02 18:23:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_swap_a(node **head_ref_a)
+void push(node **head_ref,int x)
 {
-	if(list_size((*head_ref_a)) > 1)
+	node *n = (node *)malloc(sizeof(node)); 
+	n->data = x;
+	if((*head_ref) == NULL)
 	{
-	node *nod1 = (*head_ref_a);
-	node *nod2 = NULL;
-	nod2 = nod1 ->next;
-	nod1->next = nod2 ->next;
-	(*head_ref_a) = nod2;
-	nod2 ->next = nod1;
+		(*head_ref) = n;
+		n->next = NULL;
+	}
+	else
+	{
+		n->next = (*head_ref);
+		(*head_ref) = n;
 	}
 }

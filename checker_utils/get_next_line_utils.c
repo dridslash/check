@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:48:18 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/11/28 14:13:03 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2022/01/02 17:41:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include  "../push_swap.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
