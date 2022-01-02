@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate_b.c                              :+:      :+:    :+:   */
+/*   ft_reverse_rotate_a_checker.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 19:48:38 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/01 13:21:26 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 17:59:40 by mnaqqad           #+#    #+#             */
+/*   Updated: 2022/01/01 12:56:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static node *get_sec_last_b(node **head_ref)
+static node *get_sec_last_a(node **head_ref)
 {
 	   node *tmp=(*head_ref);
 	   node *last = ft_lstlast((*head_ref));
-	   node *sec_last = NULL;
 	   while (tmp->next != last)
-	   {
 	   	tmp = tmp->next;
-	   }
-	sec_last = tmp;
+		node *sec_last = tmp;
 	return (sec_last);
 }
-void ft_reverse_rotate_b(node **head_ref_b)
+
+void ft_reverse_rotate_a(node **head_ref_a)
 {
-	if (list_size(*head_ref_b) > 1)
+	if (list_size(*head_ref_a) > 1)
 	{
-	node *tmp = (*head_ref_b);
-	node *sec_last=get_sec_last_b(head_ref_b);
-	node *last=ft_lstlast((*head_ref_b));
+	node *tmp = (*head_ref_a);
+	node *sec_last=get_sec_last_a(head_ref_a);
+	node *last=ft_lstlast((*head_ref_a));
 	sec_last->next = NULL;
 	last->next = tmp;
-	(*head_ref_b) = last;
-	write(1,"rrb\n",5);
+	(*head_ref_a) = last;
 	}
 }

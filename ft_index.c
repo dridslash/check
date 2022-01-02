@@ -17,6 +17,16 @@ void ft_index(node *head_ref,int argc,char **argv)
 	int i =1;
 	int j = 0;
 	ft_LiLHak_sort(argv,argc);
+	while (i < argc)
+	{
+		printf("index of %d is %d\n",ft_atoi(argv[i]),j);
+		i++;
+		j++;
+	}
+	j = 0;
+	printf("---------------------------------------------------\n");
+	j = 0;
+	i = 1;
 		while(head_ref != NULL)
 		{
 			i = 1;

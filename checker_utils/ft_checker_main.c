@@ -24,12 +24,12 @@ int main (int argc,char **argv)
 		write(2,"ERROR\n",7);
 		exit(1);
 	}
-	if(ft_check_dup(argc,argv) == 1)
+	if(ft_check_dup(argv) == 1)
 	{
 		write(2,"ERROR\n",7);
 		exit(1);
 	}
-	ft_fill(argc,argv,&a);
+	ft_fill(argv,&a);
 	if(list_size(a) == 0)
 	{
 		exit(0);

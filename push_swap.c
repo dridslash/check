@@ -1,55 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:32:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/30 19:32:51 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/01 15:23:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
 int main(int argc,char **argv)
 {
 	node *a = NULL;
 	node *b = NULL;
-	int i = 1;
 	if(ft_check_input(argv) == 1)
 	{
 		write(2,"ERROR\n",7);
 		exit(1);
 	}
-	if(ft_check_dup(argc,argv) == 1)
+	if(ft_check_dup(argv) == 1)
 	{
 		write(2,"ERROR\n",7);
 		exit(1);
 	}
-	i = 1;
-	while(argv[i])
-	{
-		push_back(&a,ft_atoi(argv[i]));
-		i++;
-	}
+	ft_fill(argv,&a);
 	ft_index(a,argc,argv);
-	// if(ft_check_if_sorted(a) > 0)
+	printf("before sort \n");
+	printf("linked list : a\n");
+	printlist(a);
+	if(ft_check_if_sorted(a) > 0)
+	{
+		write(1,"stack sorted\n",14);
+	}
+	else
+	{
+		if(list_size(a) > 10)
+		ft_radix(&a,&b);
+		else if (list_size(a) <= 10)
+		ft_less(&a,&b);
+	}
 	// {
 	// 	printf("sorted\n");
 	// }
 	// else
 	// {
-	printf("before sort \n");
-	printf("linked list : a\n");
-	printlist(a);
+	
 	// printf("linked list : b\n");
 	// printlist(b);
 	// ft_radix(&a,&b);
 	//small_handl(&a,&b);
-	bigech_handl(&a,&b);
+	// bigech_handl(&a,&b);
 	//ft_swap_a(&a);
 	//ft_rotate_a(&a);
 	//ft_push_b(&a,&b);

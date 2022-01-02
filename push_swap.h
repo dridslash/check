@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 18:01:27 by mnaqqad           #+#    #+#             */
-/*   Updated: 2021/12/31 12:06:14 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/01 13:53:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct node
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "get_next_line.h"
+# include "./checker_utils/get_next_line.h"
 
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(int arg);
@@ -31,7 +31,7 @@ void	printlist(node *head);
 int		ft_isalpha(char *chr);
 int		ft_check_input(char **argv);
 void	ft_swap_a(node **head_ref_a);
-int		ft_check_dup(int argc,char **argv);
+int		ft_check_dup(char **argv);
 int		ft_check_if_sorted(node *head);
 int		ft_isdigit_imp(char * arg);
 void	ft_push_b(node **head_ref_a,node **head_ref_b);
@@ -54,4 +54,13 @@ void	small_handl(node **head_ref_a,node **head_ref_b);
 void	bigech_handl(node **head_ref_a,node **head_ref_b);
 void	ft_checker(node **head_ref_a , node **head_ref_b);
 void 	ft_index(node *head_ref,int argc,char **argv);
+int     ft_strcmp(const char  *s1,const char    *s2);
+char    *ft_strstr(char *str,char   *to_find);
+void	 ft_fill(char **argv,node **head_ref_a);
+void 	send_to_a(node **head_ref_a,node **head_ref_b);
+int 	find_big_digit(node **head_ref_a);
+int 	get_min_index(node **head_ref);
+int 	get_min(node **head_ref);
+void 	ft_less(node **head_ref_a,node **head_ref_b);
+void 	sort_separ(node **head_ref_a,node **head_ref_b);
 #endif
